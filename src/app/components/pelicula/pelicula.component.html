@@ -1,0 +1,18 @@
+<article class="article-item">
+    <div class="image-wrap">
+        <img src="{{pelicula.image}}" alt="{{pelicula.title}}" />
+    </div>
+
+    <h2>{{indice+1}}-{{pelicula.title}}</h2>
+    <span class="date">
+        Hace 5 minutos
+    </span>
+    <!--Cambia estilo si el año es mayor a 2016 asigna clase "year-green" si no "year-red" Las clases estan definidas dentro de assets/css/styles.css -->
+    <span class="year" [ngClass]="{'year-green': pelicula.year > 2016 , 'year-red': pelicula.year <= 2016}">
+        {{pelicula.year}}
+    </span>
+    <a href="#">Leer más</a>
+    <button (click)="seleccionar($event, pelicula)">Seleccionar como favorita</button>
+
+    <div class="clearfix"></div>
+</article>
